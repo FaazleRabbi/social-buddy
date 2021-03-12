@@ -9,7 +9,7 @@ const Profile = () => {
         const url =`https://jsonplaceholder.typicode.com/users/${id}`
         fetch(url).then(res=>res.json()).then(data =>setProfile(data))
     },[id])
-    const {name,email,phone,website,company } = profile;
+    const {name,email,phone,website } = profile;
     // const {bs,catchPhrase} = profile?.company ;
     // const {street,suite,city,zipcode,} =profile?.address;
     return (
