@@ -1,0 +1,30 @@
+.post-sidebar{
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.posts{
+    width: 70vw;
+}
+.sidebars{
+    width: 30vw;
+    /* display: flex; */
+    display: flex;
+  padding: 20px;
+  overflow-x: scroll;
+}
+@media only screen and (max-width: 768px){
+    .post-sidebar{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.posts{
+    width: 100vw;
+}
+.sidebars{
+    width: 100vw;
+}
+}

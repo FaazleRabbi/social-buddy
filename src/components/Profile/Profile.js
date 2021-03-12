@@ -10,8 +10,8 @@ const Profile = () => {
         fetch(url).then(res=>res.json()).then(data =>setProfile(data))
     },[id])
     const {name,email,phone,website } = profile;
-    // const {bs,catchPhrase} = profile?.company ;
-    // const {street,suite,city,zipcode,} =profile?.address;
+    const {bs,catchPhrase} = profile.company || {}  ;
+    const {street,suite,city,zipcode,} =profile.address || {};
     return (
         <div className='d-flex justify-content-center m-5 p-3'>
             <div className=' '>
@@ -24,16 +24,16 @@ const Profile = () => {
                 <div>
                     <div>
                         <h5>Company</h5>
-                        <p>Name :{profile.company?.name}</p>
-                        <p>BS:{profile.company?.bs}</p>
-                        <p>{profile.company?.catchPhrase}</p>
+                        <p>Name :{name}</p>
+                        <p>BS:{bs}</p>
+                        <p>{catchPhrase}</p>
                     </div>
                     <div>
                         <h5>Address</h5>
-                        <p>Street :{profile.address?.street}</p>
-                        <p>Suite :{profile.address?.suite}</p>
-                        <p>City :{profile.address?.city}</p>
-                        <p>Zipcode :{profile.address?.zipcode}</p>
+                        <p>Street :{street}</p>
+                        <p>Suite :{suite}</p>
+                        <p>City :{city}</p>
+                        <p>Zipcode :{zipcode}</p>
 
                     </div>
                 </div>

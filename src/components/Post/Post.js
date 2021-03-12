@@ -10,6 +10,7 @@ import Comment from '../comment/Comment';
 const Post = (props) => {
   const {title,body,userId,id}= props.post;
   const [user,setUser] = useState([]);
+  const [likeBtn,setLikeBtn]= useState('')
   useEffect(()=>{
     const url =  `https://jsonplaceholder.typicode.com/users/${userId}`
     fetch(url)
@@ -32,7 +33,7 @@ const Post = (props) => {
           <p className="card-text">{body} </p>
         </div>
         <div className="card-footer bg-transparent border-light d-flex">
-          <h5 className='col-4 text-center'><ThumbUpAltIcon></ThumbUpAltIcon> Like</h5>
+          <h5 onClick={likeBtn ? "" : 'text-primary' } className='col-4 text-center'><ThumbUpAltIcon></ThumbUpAltIcon> Like</h5>
           <h6 className='col-4 text-center'><ChatBubbleIcon></ChatBubbleIcon>
             <Popup trigger={<button style={{border:'none',backgroundColor:"none"}} className="button "> Comment </button>} modal>
               <div><Comment postId={id}></Comment> </div>

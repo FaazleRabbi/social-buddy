@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '../Header/Header';
 import Post from '../Post/Post'
 import SideBar from '../SideBar/SideBar';
+import './home.css'
 
 const Home = () => {
     const [post,setPost] = useState ([])
@@ -16,15 +17,16 @@ const Home = () => {
     return (
         <div className= ""> 
           <Header></Header>
-          <div className="d-flex">
-            <div className='col-9'>
+          <div className="post-sidebar">
+            <div className="sidebars">
+              <SideBar></SideBar>
+            </div>
+            <div className='posts'>
               {
                 post.map(post => <Post post={post}></Post>)
               }
             </div>
-            <div className="col-3">
-              <SideBar></SideBar>
-            </div>
+            
           </div>
         </div>
     );

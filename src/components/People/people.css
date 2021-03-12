@@ -1,0 +1,16 @@
+@media only screen and (max-width: 600px){
+    .people{
+        height: 224px;
+      width: 125px;
+      flex-shrink: 1;
+      border:2px solid red;
+    }
+    
+    
+    .peoples{
+        display: flex;
+        padding: 20px;
+        overflow-x: scroll;
+    }
+
+    } 
